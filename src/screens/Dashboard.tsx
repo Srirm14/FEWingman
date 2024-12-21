@@ -5,6 +5,7 @@ import PeriodChart from "./periodChart";
 import Table from "./DashboardTable";
 import Filter from "@components/ui/Filter";
 import Loader from "@components/ui/Loader";
+import DashboardTable from "./DashboardTable";
 
 // Define types for the fetched data
 type CardData = {
@@ -58,7 +59,7 @@ type DashboardData = {
   cardsData: CardData[];
   chartData: ChartData;
   periodChartData: PeriodChartData;
-  tableData: TableData[];
+  tableData: TableData[] | any;
 };
 
 const Dashboard = () => {
@@ -83,7 +84,8 @@ const Dashboard = () => {
       </div>
     );
 
-  const { cardsData, chartData, periodChartData, tableData } = dashboardData;
+  const { cardsData, chartData, periodChartData } = dashboardData;
+  const { tableData } = dashboardData;
 
   return (
     <div className="px-4 sm:px-6 md:px-10 py-8 max-h-[calc(100vh-94px)] overflow-y-auto">
@@ -252,7 +254,7 @@ const Dashboard = () => {
               <div className="text-[32px] font-medium">Orders</div>
             </div>
             <div className="overflow-x-auto mt-6 rounded-[8px]">
-              <Table data={tableData} />
+              <DashboardTable />
             </div>
           </div>
         </div>
