@@ -9,6 +9,7 @@ import {
     Legend,
     ChartData,
     ChartOptions,
+    BarController,
   } from 'chart.js';
   import { Chart } from 'react-chartjs-2';
   
@@ -16,6 +17,7 @@ import {
     CategoryScale,
     LinearScale,
     BarElement,
+    BarController,
     Title,
     Tooltip,
     Legend
